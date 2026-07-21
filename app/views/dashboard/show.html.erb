@@ -1,0 +1,9 @@
+<section class="mx-auto max-w-6xl px-5 py-12">
+  <p class="font-semibold text-indigo-700"><%= current_account.name %></p>
+  <h1 class="mt-2 text-3xl font-bold text-slate-950">Dashboard</h1>
+  <div class="mt-8 grid gap-5 sm:grid-cols-3">
+    <article class="rounded-md border border-slate-200 bg-white p-6"><p class="text-sm text-slate-500">Signed in as</p><p class="mt-2 font-semibold"><%= current_user.name %></p></article>
+    <article class="rounded-md border border-slate-200 bg-white p-6"><p class="text-sm text-slate-500">Workspace slug</p><p class="mt-2 font-mono text-sm"><%= current_account.slug %></p></article>
+    <article class="rounded-md border border-slate-200 bg-white p-6"><p class="text-sm text-slate-500">Your role</p><p class="mt-2 font-semibold capitalize"><%= current_user.memberships.find_by(account: current_account).role %></p></article>
+  </div>
+</section>
